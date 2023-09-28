@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Project_LTW.Models.PhanLoai>
+<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+    @foreach (var item in Model)
+    {
+        
+            <a href="@Url.Action("LoaiDongHo", "Home", new { id = item.MaLoai })"> @item.TenLoai</a>
+
+            }
+</ul>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Project_LTW.Models.DongHo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ADMIN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDongHo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDongHo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySanXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiamGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongBan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDongHo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDongHo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySanXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiamGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongBan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "TXSDONGH O", new { id = item.MaDongHo }) |
+            @Html.ActionLink("Details", "TXSDONGHO", new { id = item.MaDongHo }) |
+            @Html.ActionLink("Delete", "TXSDONGHO", new { id = item.MaDongHo })
+        </td>
+    </tr>
+}
+
+</table>

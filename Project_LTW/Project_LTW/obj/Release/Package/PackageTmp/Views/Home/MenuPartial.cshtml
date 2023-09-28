@@ -1,0 +1,74 @@
+﻿@using Project_LTW.Models
+@model IEnumerable<DongHo>
+<!-- Main-menu -->
+<div class="main-menu d-none d-lg-block">
+    <nav>
+        <ul id="navigation">
+            <li><a href="@Url.Action("Index","DSDONGHO")">Trang Chủ</a></li>
+            @*@foreach (var groupItem in Model.GroupBy(n => n.MaDongHo))
+            {
+                if (groupItem.Key != null)
+                {*@
+            <li><a href="shop.html">Giới Thiệu </a></li>
+            <li class="thuonghieu">
+                <a href="#">Thương Hiệu Đồng Hồ Nổi Tiếng</a>
+                <ul class="submenu">
+                    <li><a href="shop.html"> Rolex</a></li>
+                    <li><a href="shop.html"> Hublot</a></li>
+                    <li><a href="shop.html"> G-Sock</a></li>
+                    <li><a href="shop.html"> AppleWatch</a></li>
+                    <li><a href="shop.html"> Casio</a></li>
+                    <li><a href="shop.html"> Citizen</a></li>
+                </ul>
+            </li>
+            <li class="donghonam">
+                <a href="@Url.Action("DSDONGHO", "DongHoRoLex")">Đồng Hồ Nam</a>
+                <ul class="submenu">
+                    <li><a href="shop.html"> Rolex</a></li>
+                    <li><a href="shop.html"> Hublot</a></li>
+                    <li><a href="shop.html"> G-Sock</a></li>
+                    <li><a href="shop.html"> AppleWatch</a></li>
+                    <li><a href="shop.html"> Casio</a></li>
+                    <li><a href="shop.html"> Citizen</a></li>
+                </ul>
+            </li>
+            @*<li><a href="@Url.Action("DSDONGHO","DongHoRoLex")">Đồng Hồ Nam</a></li>*@
+            <li class="donghonu">
+                <a href="@Url.Action("DSDONGHO", "DongHoRoLex")">Đồng Hồ Nữ</a>
+                <ul class="submenu">
+                    <li><a href="shop.html"> Saga</a></li>
+                    <li><a href="shop.html"> Daniel Wilson</a></li>
+                    <li><a href="shop.html"> FOSSIL</a></li>
+                    <li><a href="shop.html"> ASKAGEN</a></li>
+                    <li><a href="shop.html"> AppleWatch</a></li>
+                    <li><a href="shop.html"> TISSOT</a></li>
+                </ul>
+            </li>
+            <li class="hot">
+                <a href="#">Thông Tin Sản Phẩm</a>
+                <ul class="submenu">
+                    <li><a href="shop.html"> Danh sách sản phẩm</a></li>
+                    <li><a href="shop.html"> Mẫu mới</a></li>
+                    <li><a href="product_details.html"> Thông tin chi tiết sản phẩm</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="blog.html">Blogs</a>
+                <ul class="submenu">
+                    <li><a href="blog.html">Bài viết mới</a></li>
+                    <li><a href="blog-details.html">Đánh Giá của Khách Hàng</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Liên Hệ</a>
+                <ul class="submenu">
+                    <li><a href="login.html">Giới Thiệu Về Hải Triều </a></li>
+                    <li><a href="cart.html">Tin Tức</a></li>
+                    <li><a href="elements.html">Thông Tin Liên Hệ</a></li>
+                    <li><a href="confirmation.html">Xem Giỏ Hàng</a></li>
+                    <li><a href="checkout.html">Đăng Xuất</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

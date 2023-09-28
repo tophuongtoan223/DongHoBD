@@ -1,0 +1,177 @@
+﻿@model Project_LTW.Models.DongHo
+@{
+    ViewBag.Title = "chi tiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container single_product_container">
+    <div class="row">
+        <div class="col">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Đồng Hồ Nam</a></li>
+                    @*<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Đồng Hồ Nữ</a></li>*@
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="single_product_pics">
+                <div class="row">
+                    @*<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+                            <div class="single_product_thumbnails">
+                                <ul>
+                                    <li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
+                                    <li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
+                                    <li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
+                                </ul>
+                            </div>
+                        </div>*@
+                    <div class="col-lg-9 image_col order-lg-2 order-1">
+                        <div class="single_product_image">
+                            <div class="single_product_image_background" style="background-image:url(@Model.AnhBia)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="product_details">
+                <div class="product_details_title">
+                    <h2>@Model.TenDongHo</h2>
+                    <p>@Model.MoTa</p>
+                </div>
+                <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                    <span class="ti-truck"></span><span>Đặt Hàng Ngay</span>
+                </div>
+                @*<div class="original_price">@Model.GiaBan"</div>*@
+            <div class="product_price">@string.Format("{0:#,##0,0 VNĐ}",@Model.GiaBan)</div>
+                <ul class="star_rating">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+                <div class="product_color">
+                    <span>Select Color:</span>
+                    <ul>
+                        <li style="background: #e54e5d"></li>
+                        <li style="background: #252525"></li>
+                        <li style="background: #60b3f3"></li>
+                    </ul>
+                </div>
+                <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                    <span>Quantity:</span>
+                    <div class="quantity_selector">
+                        <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                        <span id="quantity_value">1</span>
+                        <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="btn btn-danger" style="margin-left:20px;"><a style="color:#fff" href="@Url.Action("ThemGioHang", "GioHang", new { id = Model.MaDongHo, url = Request.Url.ToString()})">Thêm vào giỏ hàng</a></div>
+                    
+                    <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tab Reviews -->
+
+    <div id="tab_3" class="tab_container active">
+        <div class="row">
+
+            <!-- User Reviews -->
+
+            <div class="col-lg-6 reviews_col">
+                <div class="tab_title reviews_title">
+
+                    <h5>Reviews (2)</h5>
+                </div>
+
+                <!-- User Review -->
+
+                <div class="user_review_container d-flex flex-column flex-sm-row">
+                    <div class="user">
+                        <div class="user_pic"></div>
+                        <div class="user_rating">
+                            <ul class="star_rating">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review_date">27-11-2022</div>
+                        <div class="user_name">Tô Toàn</div>
+                        <p>Shop Tư Vấn- Tận Tình Uy Tín Chất Lượng</p>
+                    </div>
+                </div>
+
+                <!-- User Review -->
+
+                <div class="user_review_container d-flex flex-column flex-sm-row">
+                    <div class="user">
+                        <div class="user_pic"></div>
+                        <div class="user_rating">
+                            <ul class="star_rating">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="review_date">27-11-2022</div>
+                        <div class="user_name">Hồng Phúc</div>
+                        <p>Tốt-Chất Lượng Cao</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Review -->
+
+            <div class="col-lg-6 add_review_col">
+
+                <div class="add_review">
+                    <form id="review_form" action="post">
+                        <div>
+                            <h1>Nhận Xét</h1>
+                            <input id="review_name" class="form_input input_name" type="text" name="name" placeholder="Name*" required="required" data-error="Name is required.">
+                            <input id="review_email" class="form_input input_email" type="email" name="email" placeholder="Email*" required="required" data-error="Valid email is required.">
+                        </div>
+                        <div>
+                            <h1>Your Rating:</h1>
+                            <ul class="user_star_rating">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                            <textarea id="review_message" class="input_review" name="message" placeholder="Your Review" rows="4" required="" data-error="Please, leave us a review."></textarea>
+                        </div>
+                        <div class="text-left text-sm-right">
+                            <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

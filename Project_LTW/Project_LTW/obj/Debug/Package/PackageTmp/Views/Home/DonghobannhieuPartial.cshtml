@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Project_LTW.Models.DongHo>
+<style type="text/css">
+    .imgDonghobannhieu {
+        width: 100px;
+        transition: all ease 0.5s;
+    }
+
+        .imgDonghobannhieu:hover {
+            transform: scale(1.5);
+        }
+
+    .Image {
+        overflow: hidden;
+    }
+
+    .description {
+        line-height: 24px;
+        height: 72px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .linkhover:hover {
+        color: red;
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="container">
+    <h2 class="text-center">Best Seller</h2>
+    <hr />
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12" style="padding:3px">
+                <div class="media-object-default">
+                    <div class="media">
+                        <div class="media-left">
+                            <div class="Image">
+                                <a href="@Url.Action("Chitietsanpham","Home", new {id=item.MaDongHo })">
+                                    <img class="media-object imgDonghobannhieu" src="~/img/rolex/@item.AnhBia" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="@Url.Action("Chitietsanpham","Home")" class="linkhover">@item.TenDongHo</h4>
+                            <p class="text-justify description">@Truncate(@item.MoTa, 200)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @helper Truncate(string s, int lenght)
+        {
+            if (s.Length < lenght)
+            {
+                @s
+            }
+            else
+            {
+                @s.Substring(0, lenght)<text>...</text>
+            }
+        }
+    </div>
+</div>
+<hr />

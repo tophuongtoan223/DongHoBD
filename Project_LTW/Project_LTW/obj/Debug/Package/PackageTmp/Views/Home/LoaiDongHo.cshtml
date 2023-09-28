@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Project_LTW.Models.DongHo>
+@{
+    ViewBag.Title = "LoaiDongHo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row align-items-center">
+    <div class="col text-center">
+        <div class="new_arrivals_sorting">
+            @*<div class style="border: 4px double #b1154a;"</div>*@
+            @Html.Action("PhanLoaiPartial", "Home")
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="product-grid" data-isotope="{ &quot;itemSelector&quot;: &quot;.product-item&quot;, &quot;layoutMode&quot;: &quot;fitRows&quot; }" style="position: relative; height: 759.974px;">
+
+            <!-- Product 1 -->
+
+            @foreach (var item in Model)
+            {
+
+                <div class="product-item men" style="position: absolute; left: 0px; top: 0px;">
+
+
+                    <div class="product discount product_filter" style="border-right: 1px solid rgb(233, 233, 233);">
+                        <div class="product_image">
+                            <img src="@item.AnhBia" alt="">
+                        </div>
+                        <div class="favorite favorite_left"></div>
+                        @*<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>*@
+                        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>Sale</span></div>
+                        <div class="product_info">
+                            <h6 class="product_name"><a href="@Url.Action("Chitietsanpham", "Home", new {id = item.MaDongHo })">@item.TenDongHo</a></h6>
+                            <div class="product_price">@string.Format("{0:#,##0,0 VNĐ}",@item.GiaBan)<span>@*@item.GiaBan*@</span></div>
+                        </div>
+                    </div>
+                    <div class="red_button add_to_cart_button"><a href="@Url.Action("ThemGioHang","GioHang", new { id = item.MaDongHo, url = Request.Url.ToString()})">Thêm Vào Giỏ Hàng</a></div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

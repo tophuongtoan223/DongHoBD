@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Project_LTW.Models.Gioithieusanpham>
+
+@foreach (var item in Model)
+{
+    <div class="row align-items-center justify-content-between padding-130">
+        <div class="col-lg-5 col-md-6">
+            <div class="watch-details mb-40">
+                <h2>Sản Phẩm Mới  @item.TenDongHo</h2>
+                <p>@item.MoTa (Hahahhaa)</p>
+                <a href="shop.html" class="btn">Show Watches</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-10">
+            <div class="choice-watch-img mb-40">
+                <img src="~/img/APPLEWATCH/Apple Watch S3 GPS 38mm viền nhôm dây silicone.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+}
